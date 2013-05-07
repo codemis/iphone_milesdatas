@@ -9,7 +9,7 @@
 @implementation MDMileageTableVC
 
 - (NSInteger) recordCount {
-    return 0;
+    return self.records.count;
 }
 
 - (void)viewDidLoad
@@ -31,11 +31,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Record"
+                                                            forIndexPath:indexPath];
+    NSDictionary *record = (NSDictionary *) self.records[indexPath.row];
+    cell.textLabel.text = record[@"car"];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@",
+                                            record[@"start_location"],
+                                            record[@"stop_location"]];
     return cell;
 }
 
@@ -58,6 +60,8 @@
                                                      error:&error];
     if (error) {
         NSLog(@"We have an error!");
+    }else{
+        [self.tableView reloadData];
     }
 }
 @end
