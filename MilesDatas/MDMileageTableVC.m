@@ -34,10 +34,15 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Record"
                                                             forIndexPath:indexPath];
     NSDictionary *record = (NSDictionary *) self.records[indexPath.row];
-    cell.textLabel.text = record[@"car"];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@",
-                                            record[@"start_location"],
-                                            record[@"stop_location"]];
+    NSDateFormatter *dateFormatter = NSDateFormatter.new;
+    //2013-05-07T03:56:30Z
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+    NSDate *creationDate = [dateFormatter dateFromString:record[@"created_at"]];
+    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    NSString *prettyCreationDate = [dateFormatter stringFromDate:creationDate];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", prettyCreationDate, record[@"car"]];
+    cell.detailTextLabel.text = record[@"reason"];
     return cell;
 }
 
