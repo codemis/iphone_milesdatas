@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66872BD91739B68500E89B35 /* MDMileageShowTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 66872BD81739B68500E89B35 /* MDMileageShowTableVC.m */; };
 		66B4458C173998910014D61C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B4458B173998910014D61C /* UIKit.framework */; };
 		66B4458E173998910014D61C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B4458D173998910014D61C /* Foundation.framework */; };
 		66B44590173998910014D61C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B4458F173998910014D61C /* CoreGraphics.framework */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		66872BD71739B68500E89B35 /* MDMileageShowTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMileageShowTableVC.h; sourceTree = "<group>"; };
+		66872BD81739B68500E89B35 /* MDMileageShowTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDMileageShowTableVC.m; sourceTree = "<group>"; };
 		66B44588173998910014D61C /* MilesDatas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MilesDatas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B4458B173998910014D61C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		66B4458D173998910014D61C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -111,6 +114,8 @@
 			children = (
 				66B445AB17399B910014D61C /* MDMileageTableVC.h */,
 				66B445AC17399B910014D61C /* MDMileageTableVC.m */,
+				66872BD71739B68500E89B35 /* MDMileageShowTableVC.h */,
+				66872BD81739B68500E89B35 /* MDMileageShowTableVC.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 				66B44598173998910014D61C /* main.m in Sources */,
 				66B4459C173998910014D61C /* MDAppDelegate.m in Sources */,
 				66B445AD17399B910014D61C /* MDMileageTableVC.m in Sources */,
+				66872BD91739B68500E89B35 /* MDMileageShowTableVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +305,7 @@
 				66B445A7173998910014D61C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

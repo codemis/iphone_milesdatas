@@ -1,4 +1,5 @@
 #import "MDMileageTableVC.h"
+#import "MDMileageShowTableVC.h"
 
 @interface MDMileageTableVC () <NSURLConnectionDataDelegate>
 @property (nonatomic, readonly) NSInteger recordCount;
@@ -36,6 +37,7 @@
     NSDictionary *record = (NSDictionary *) self.records[indexPath.row];
     NSDateFormatter *dateFormatter = NSDateFormatter.new;
     //2013-05-07T03:56:30Z
+    //TODO: Clean up and make static
     [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
     NSDate *creationDate = [dateFormatter dateFromString:record[@"created_at"]];
     [dateFormatter setDateStyle:NSDateFormatterShortStyle];
@@ -68,5 +70,12 @@
     }else{
         [self.tableView reloadData];
     }
+}
+#pragma mark - Segue methods
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender
+{
+    MDMileageShowTableVC *mileageShowVC = segue.destinationViewController;
+    mileageShowVC.record = (NSDictionary *) self.records[self.tableView.indexPathForSelectedRow.row];
 }
 @end
