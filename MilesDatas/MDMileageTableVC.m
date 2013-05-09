@@ -17,7 +17,7 @@
 {
     [super viewDidLoad];
     self.jsonResponse = NSMutableData.new;
-    NSURL *url = [NSURL URLWithString:@"http://localhost:3000/records.json"];
+    NSURL *url = [NSURL URLWithString:@"http://blooming-wave-3501.herokuapp.com/records.json"];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     [NSURLConnection connectionWithRequest:urlRequest delegate:self];
 }

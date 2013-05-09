@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		665E82D8173B1E6F0004BC0D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 665E82D7173B1E6F0004BC0D /* README.md */; };
 		66872BD91739B68500E89B35 /* MDMileageShowTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 66872BD81739B68500E89B35 /* MDMileageShowTableVC.m */; };
 		66B4458C173998910014D61C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B4458B173998910014D61C /* UIKit.framework */; };
 		66B4458E173998910014D61C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B4458D173998910014D61C /* Foundation.framework */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		665E82D7173B1E6F0004BC0D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		66872BD71739B68500E89B35 /* MDMileageShowTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMileageShowTableVC.h; sourceTree = "<group>"; };
 		66872BD81739B68500E89B35 /* MDMileageShowTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDMileageShowTableVC.m; sourceTree = "<group>"; };
 		66B44588173998910014D61C /* MilesDatas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MilesDatas.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +61,7 @@
 		66B4457F173998900014D61C = {
 			isa = PBXGroup;
 			children = (
+				665E82D7173B1E6F0004BC0D /* README.md */,
 				66B44591173998910014D61C /* MilesDatas */,
 				66B4458A173998910014D61C /* Frameworks */,
 				66B44589173998910014D61C /* Products */,
@@ -177,6 +180,7 @@
 				66B445A0173998910014D61C /* Default@2x.png in Resources */,
 				66B445A2173998910014D61C /* Default-568h@2x.png in Resources */,
 				66B445A917399AB30014D61C /* MainStoryboard.storyboard in Resources */,
+				665E82D8173B1E6F0004BC0D /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
