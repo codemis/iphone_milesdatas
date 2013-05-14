@@ -4,7 +4,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *startOdometer;
 @property (weak, nonatomic) IBOutlet UILabel *stopLocation;
 @property (weak, nonatomic) IBOutlet UILabel *stopOdometer;
-@property (weak, nonatomic) IBOutlet UILabel *reason;
+@property (weak, nonatomic) IBOutlet UITextView *reason;
 @end
 @implementation MDMileageShowTableVC
 - (void)viewDidLoad

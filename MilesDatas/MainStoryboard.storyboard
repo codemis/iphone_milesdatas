@@ -152,21 +152,29 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Reason for Trip" id="Qh0-wf-pqU">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="GTE-E3-oYU" style="IBUITableViewCellStyleDefault" id="TyI-aL-gR1">
-                                        <rect key="frame" x="0.0" y="318" width="320" height="46"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="151" id="TyI-aL-gR1">
+                                        <rect key="frame" x="0.0" y="318" width="320" height="153"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Reason" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTE-E3-oYU">
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Reason" translatesAutoresizingMaskIntoConstraints="NO" id="eEL-u6-9mh">
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="289" id="kyE-ZC-umW"/>
+                                                        <constraint firstAttribute="height" constant="140" id="r7V-ly-T7E"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="eEL-u6-9mh" firstAttribute="centerY" secondItem="TyI-aL-gR1" secondAttribute="centerY" type="default" id="geP-oC-8VR"/>
+                                            <constraint firstItem="eEL-u6-9mh" firstAttribute="centerX" secondItem="TyI-aL-gR1" secondAttribute="centerX" type="default" id="nhH-jO-Nus"/>
+                                        </constraints>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -178,7 +186,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Trip" id="nfq-P4-eqD"/>
                     <connections>
-                        <outlet property="reason" destination="GTE-E3-oYU" id="CC3-yC-umC"/>
+                        <outlet property="reason" destination="eEL-u6-9mh" id="SFR-cw-EFL"/>
                         <outlet property="startLocation" destination="TyA-4C-5bI" id="S2C-ls-LFy"/>
                         <outlet property="startOdometer" destination="DcL-qW-UPY" id="dox-hn-6LM"/>
                         <outlet property="stopLocation" destination="pxU-cK-F9k" id="DUi-cO-sBv"/>
@@ -208,6 +216,24 @@
             <point key="canvasLocation" x="-232" y="150"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="MDMileageShowTableVC" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MDMileageShowTableVC.h"/>
+            <relationships>
+                <relationship kind="outlet" name="reason" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="startLocation" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="startOdometer" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="stopLocation" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="stopOdometer" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MDMileageTableVC" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MDMileageTableVC.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
