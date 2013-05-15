@@ -75,7 +75,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
                  sender:(id)sender
 {
-    MDMileageShowTableVC *mileageShowVC = segue.destinationViewController;
-    mileageShowVC.record = (NSDictionary *) self.records[self.tableView.indexPathForSelectedRow.row];
+    if ([segue.identifier isEqualToString:@"showTrip"]) {
+        MDMileageShowTableVC *mileageShowVC = segue.destinationViewController;
+        mileageShowVC.record = (NSDictionary *) self.records[self.tableView.indexPathForSelectedRow.row];
+    }
 }
 @end

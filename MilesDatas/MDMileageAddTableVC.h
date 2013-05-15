@@ -1,0 +1,2 @@
+@interface MDMileageAddTableVC : UITableViewController
+@end

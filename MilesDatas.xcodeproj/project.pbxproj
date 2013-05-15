@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6659091B1742E10B00CA419B /* MDMileageAddTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6659091A1742E10B00CA419B /* MDMileageAddTableVC.m */; };
 		665E82D8173B1E6F0004BC0D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 665E82D7173B1E6F0004BC0D /* README.md */; };
 		66872BD91739B68500E89B35 /* MDMileageShowTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 66872BD81739B68500E89B35 /* MDMileageShowTableVC.m */; };
 		66B4458C173998910014D61C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B4458B173998910014D61C /* UIKit.framework */; };
@@ -23,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		665909191742E10B00CA419B /* MDMileageAddTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMileageAddTableVC.h; sourceTree = "<group>"; };
+		6659091A1742E10B00CA419B /* MDMileageAddTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDMileageAddTableVC.m; sourceTree = "<group>"; };
 		665E82D7173B1E6F0004BC0D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		66872BD71739B68500E89B35 /* MDMileageShowTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMileageShowTableVC.h; sourceTree = "<group>"; };
 		66872BD81739B68500E89B35 /* MDMileageShowTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDMileageShowTableVC.m; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 				66B445AC17399B910014D61C /* MDMileageTableVC.m */,
 				66872BD71739B68500E89B35 /* MDMileageShowTableVC.h */,
 				66872BD81739B68500E89B35 /* MDMileageShowTableVC.m */,
+				665909191742E10B00CA419B /* MDMileageAddTableVC.h */,
+				6659091A1742E10B00CA419B /* MDMileageAddTableVC.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 				66B4459C173998910014D61C /* MDAppDelegate.m in Sources */,
 				66B445AD17399B910014D61C /* MDMileageTableVC.m in Sources */,
 				66872BD91739B68500E89B35 /* MDMileageShowTableVC.m in Sources */,
+				6659091B1742E10B00CA419B /* MDMileageAddTableVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
