@@ -21,6 +21,9 @@
 		66B445A2173998910014D61C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66B445A1173998910014D61C /* Default-568h@2x.png */; };
 		66B445A917399AB30014D61C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66B445A817399AB30014D61C /* MainStoryboard.storyboard */; };
 		66B445AD17399B910014D61C /* MDMileageTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B445AC17399B910014D61C /* MDMileageTableVC.m */; };
+		F4DF8B5D1759B00D001B88A1 /* compass.png in Resources */ = {isa = PBXBuildFile; fileRef = F4DF8B5C1759B00D001B88A1 /* compass.png */; };
+		F4DF8B601759B059001B88A1 /* MDRouteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4DF8B5F1759B059001B88A1 /* MDRouteVC.m */; };
+		F4DF8B621759B252001B88A1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DF8B611759B252001B88A1 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,10 @@
 		66B445A817399AB30014D61C /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		66B445AB17399B910014D61C /* MDMileageTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMileageTableVC.h; sourceTree = "<group>"; };
 		66B445AC17399B910014D61C /* MDMileageTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDMileageTableVC.m; sourceTree = "<group>"; };
+		F4DF8B5C1759B00D001B88A1 /* compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compass.png; sourceTree = "<group>"; };
+		F4DF8B5E1759B059001B88A1 /* MDRouteVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRouteVC.h; sourceTree = "<group>"; };
+		F4DF8B5F1759B059001B88A1 /* MDRouteVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRouteVC.m; sourceTree = "<group>"; };
+		F4DF8B611759B252001B88A1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4DF8B621759B252001B88A1 /* MapKit.framework in Frameworks */,
 				66B4458C173998910014D61C /* UIKit.framework in Frameworks */,
 				66B4458E173998910014D61C /* Foundation.framework in Frameworks */,
 				66B44590173998910014D61C /* CoreGraphics.framework in Frameworks */,
@@ -64,6 +72,7 @@
 		66B4457F173998900014D61C = {
 			isa = PBXGroup;
 			children = (
+				F4DF8B611759B252001B88A1 /* MapKit.framework */,
 				665E82D7173B1E6F0004BC0D /* README.md */,
 				66B44591173998910014D61C /* MilesDatas */,
 				66B4458A173998910014D61C /* Frameworks */,
@@ -120,6 +129,9 @@
 			children = (
 				66B445AB17399B910014D61C /* MDMileageTableVC.h */,
 				66B445AC17399B910014D61C /* MDMileageTableVC.m */,
+				F4DF8B5E1759B059001B88A1 /* MDRouteVC.h */,
+				F4DF8B5F1759B059001B88A1 /* MDRouteVC.m */,
+				F4DF8B5C1759B00D001B88A1 /* compass.png */,
 				66872BD71739B68500E89B35 /* MDMileageShowTableVC.h */,
 				66872BD81739B68500E89B35 /* MDMileageShowTableVC.m */,
 				665909191742E10B00CA419B /* MDMileageAddTableVC.h */,
@@ -186,6 +198,7 @@
 				66B445A2173998910014D61C /* Default-568h@2x.png in Resources */,
 				66B445A917399AB30014D61C /* MainStoryboard.storyboard in Resources */,
 				665E82D8173B1E6F0004BC0D /* README.md in Resources */,
+				F4DF8B5D1759B00D001B88A1 /* compass.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +214,7 @@
 				66B445AD17399B910014D61C /* MDMileageTableVC.m in Sources */,
 				66872BD91739B68500E89B35 /* MDMileageShowTableVC.m in Sources */,
 				6659091B1742E10B00CA419B /* MDMileageAddTableVC.m in Sources */,
+				F4DF8B601759B059001B88A1 /* MDRouteVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

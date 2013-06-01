@@ -1,4 +1,5 @@
 #import "MDMileageShowTableVC.h"
+#import "MDRouteVC.h"
 @interface MDMileageShowTableVC ()
 @property (weak, nonatomic) IBOutlet UILabel *startLocation;
 @property (weak, nonatomic) IBOutlet UILabel *startOdometer;
@@ -15,5 +16,11 @@
     self.stopLocation.text = self.record[@"stop_location"];
     self.stopOdometer.text = self.record[@"stop_odometer"];
     self.reason.text = self.record[@"reason"];
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showRoute"]) {
+        MDRouteVC *routeVC = segue.destinationViewController;
+        routeVC.record = self.record;
+    }
 }
 @end

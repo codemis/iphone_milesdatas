@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="gfo-tr-67Q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="gfo-tr-67Q">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -54,7 +54,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KzM-DT-F3d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="208" y="153"/>
+            <point key="canvasLocation" x="-48" y="151"/>
         </scene>
         <!--Mileage Add TableVC - New Trip-->
         <scene sceneID="Rg5-Be-rAO">
@@ -304,7 +304,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gsT-HI-Anb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="744" y="-93"/>
+            <point key="canvasLocation" x="488" y="-95"/>
         </scene>
         <!--Mileage Show TableVC - Trip-->
         <scene sceneID="OFs-7f-IJ2">
@@ -441,7 +441,13 @@
                             <outlet property="delegate" destination="ACB-Zb-bgD" id="OyO-z5-Q4I"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Trip" id="nfq-P4-eqD"/>
+                    <navigationItem key="navigationItem" title="Trip" id="nfq-P4-eqD">
+                        <barButtonItem key="rightBarButtonItem" image="compass.png" id="K4o-s9-UVX">
+                            <connections>
+                                <segue destination="1NW-cn-XUK" kind="push" identifier="showRoute" id="bHZ-hR-aKO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="reason" destination="eEL-u6-9mh" id="SFR-cw-EFL"/>
                         <outlet property="startLocation" destination="TyA-4C-5bI" id="S2C-ls-LFy"/>
@@ -452,7 +458,31 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CtF-4m-b3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="745" y="609"/>
+            <point key="canvasLocation" x="489" y="607"/>
+        </scene>
+        <!--Route VC - Route-->
+        <scene sceneID="uKL-8e-V80">
+            <objects>
+                <viewController id="1NW-cn-XUK" userLabel="Route VC - Route" customClass="MDRouteVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0df-Fj-Xin">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="l9T-Yh-By3"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="l9T-Yh-By3" firstAttribute="trailing" secondItem="0df-Fj-Xin" secondAttribute="trailing" type="default" id="9DQ-Rr-wus"/>
+                            <constraint firstItem="l9T-Yh-By3" firstAttribute="bottom" secondItem="0df-Fj-Xin" secondAttribute="bottom" type="default" id="Caz-59-dML"/>
+                            <constraint firstItem="l9T-Yh-By3" firstAttribute="leading" secondItem="0df-Fj-Xin" secondAttribute="leading" type="default" id="pLE-1I-dax"/>
+                            <constraint firstItem="l9T-Yh-By3" firstAttribute="top" secondItem="0df-Fj-Xin" secondAttribute="top" type="default" id="tF5-yE-myn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Route" id="k5Z-fo-kC1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OBK-1E-oS6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="923" y="607"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qie-A9-JBs">
@@ -470,39 +500,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sgr-Pp-agJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-232" y="150"/>
+            <point key="canvasLocation" x="-488" y="148"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="MDMileageAddTableVC" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MDMileageAddTableVC.h"/>
-            <relationships>
-                <relationship kind="action" name="addTrip:"/>
-                <relationship kind="outlet" name="car" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="reason" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="startingLocation" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="startingOdometer" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="stoppingLocation" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="stoppingOdometer" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MDMileageShowTableVC" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MDMileageShowTableVC.h"/>
-            <relationships>
-                <relationship kind="outlet" name="reason" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="startLocation" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="startOdometer" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="stopLocation" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="stopOdometer" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MDMileageTableVC" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MDMileageTableVC.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
+    <resources>
+        <image name="compass.png" width="20" height="20"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
