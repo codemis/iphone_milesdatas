@@ -4,7 +4,7 @@
 @interface MDMileageTableVC () <NSURLConnectionDataDelegate>
 @property (nonatomic, readonly) NSInteger recordCount;
 @property (nonatomic, strong) NSMutableData *jsonResponse;
-@property (nonatomic, strong) NSArray *records;
+@property (nonatomic, strong) NSMutableArray *records;
 @end
 
 @implementation MDMileageTableVC
@@ -21,12 +21,9 @@
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     [NSURLConnection connectionWithRequest:urlRequest delegate:self];
 }
-
 #pragma mark - Table view data source
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
     return self.recordCount;
 }
 
@@ -47,7 +44,23 @@
     cell.detailTextLabel.text = record[@"reason"];
     return cell;
 }
-
+-(void)  tableView:(UITableView *)tableView
+commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+ forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSString *urlString = [NSString stringWithFormat:@"http://blooming-wave-3501.herokuapp.com/records/%@.json",
+                               self.records[indexPath.row][@"id"]];
+        NSURL *url = [NSURL URLWithString:urlString];
+        NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
+        [urlRequest setValue:@"application/json"
+          forHTTPHeaderField:@"Content-Type"];
+        [urlRequest setValue:@"application/json"
+          forHTTPHeaderField:@"accept"];
+        urlRequest.HTTPMethod = @"DELETE";
+        [self.records removeObjectAtIndex:indexPath.row];
+        [NSURLConnection connectionWithRequest:urlRequest delegate:self];
+    }
+}
 #pragma mark - NSURL Delegate methods
 - (void) connection:(NSURLConnection *)connection
      didReceiveData:(NSData *)data
@@ -62,14 +75,12 @@
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSError *error;
-    self.records = [NSJSONSerialization JSONObjectWithData:self.jsonResponse
+    if (self.jsonResponse.length > 0) //Rails sends no content on delete
+        self.records = [[NSJSONSerialization JSONObjectWithData:self.jsonResponse
                                                    options:0
-                                                     error:&error];
-    if (error) {
-        NSLog(@"We have an error!");
-    }else{
-        [self.tableView reloadData];
-    }
+                                                     error:&error] mutableCopy];
+    if (error) NSLog(@"We have an error!");
+    else [self.tableView reloadData];
 }
 #pragma mark - Segue methods
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
