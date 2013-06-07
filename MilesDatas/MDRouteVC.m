@@ -26,6 +26,14 @@
     location.longitude = longitude;
     return location;
 }
+-(NSString *)formatOdometer:(NSNumber *)odometer {
+    NSNumberFormatter *formatter = NSNumberFormatter.new;
+    formatter.numberStyle = NSNumberFormatterDecimalStyle;
+    return [NSString stringWithFormat:@"Odometer: %@",[formatter stringFromNumber:odometer]];
+}
+-(NSNumber *)odometer:(NSString *)reading {
+    return [NSNumber numberWithDouble:[reading doubleValue]];
+}
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
     CLLocationCoordinate2D startLocation =
@@ -36,10 +44,13 @@
         startLocation,0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
     [self.mapView setRegion:[self.mapView regionThatFits:viewRegion]
                    animated:YES];
-    NSString *subtitle = [NSString stringWithFormat:@"Odometer: %@",self.record[@"start_odometer"]];
+    NSString *startSubtitle = [self formatOdometer:[self odometer:self.record[@"start_odometer"]]];
     MKPointAnnotation *startPoint = [self addPinToMapAtLocation:startLocation
                                                  withTitle:self.record[@"start_location"]
-                                              withSubtitle:subtitle];
+                                              withSubtitle:startSubtitle];
     [self.mapView selectAnnotation:startPoint animated:YES];
+    CLLocationCoordinate2D stopLocation =
+    [self locationWithLatitude:[self.record[@"stop_lat"] doubleValue]
+                 withLongitude:[self.record[@"stop_long"] doubleValue]];
 }
 @end
