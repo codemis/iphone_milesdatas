@@ -52,5 +52,9 @@
     CLLocationCoordinate2D stopLocation =
     [self locationWithLatitude:[self.record[@"stop_lat"] doubleValue]
                  withLongitude:[self.record[@"stop_long"] doubleValue]];
+    NSString *stopSubtitle = [self formatOdometer:[self odometer:self.record[@"stop_odometer"]]];
+    [self addPinToMapAtLocation:stopLocation
+                      withTitle:self.record[@"stop_location"]
+                   withSubtitle:stopSubtitle];
 }
 @end
