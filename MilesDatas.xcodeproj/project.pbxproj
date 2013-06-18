@@ -16,14 +16,12 @@
 		66B44596173998910014D61C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 66B44594173998910014D61C /* InfoPlist.strings */; };
 		66B44598173998910014D61C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B44597173998910014D61C /* main.m */; };
 		66B4459C173998910014D61C /* MDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B4459B173998910014D61C /* MDAppDelegate.m */; };
-		66B4459E173998910014D61C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 66B4459D173998910014D61C /* Default.png */; };
-		66B445A0173998910014D61C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66B4459F173998910014D61C /* Default@2x.png */; };
-		66B445A2173998910014D61C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66B445A1173998910014D61C /* Default-568h@2x.png */; };
 		66B445A917399AB30014D61C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66B445A817399AB30014D61C /* MainStoryboard.storyboard */; };
 		66B445AD17399B910014D61C /* MDMileageTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B445AC17399B910014D61C /* MDMileageTableVC.m */; };
 		F4DF8B5D1759B00D001B88A1 /* compass.png in Resources */ = {isa = PBXBuildFile; fileRef = F4DF8B5C1759B00D001B88A1 /* compass.png */; };
 		F4DF8B601759B059001B88A1 /* MDRouteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4DF8B5F1759B059001B88A1 /* MDRouteVC.m */; };
 		F4DF8B621759B252001B88A1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DF8B611759B252001B88A1 /* MapKit.framework */; };
+		F4ECB11C177123870052DA58 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4ECB11B177123870052DA58 /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,9 +40,6 @@
 		66B44599173998910014D61C /* MilesDatas-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MilesDatas-Prefix.pch"; sourceTree = "<group>"; };
 		66B4459A173998910014D61C /* MDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDAppDelegate.h; sourceTree = "<group>"; };
 		66B4459B173998910014D61C /* MDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDAppDelegate.m; sourceTree = "<group>"; };
-		66B4459D173998910014D61C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		66B4459F173998910014D61C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		66B445A1173998910014D61C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		66B445A817399AB30014D61C /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		66B445AB17399B910014D61C /* MDMileageTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMileageTableVC.h; sourceTree = "<group>"; };
 		66B445AC17399B910014D61C /* MDMileageTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDMileageTableVC.m; sourceTree = "<group>"; };
@@ -52,6 +47,21 @@
 		F4DF8B5E1759B059001B88A1 /* MDRouteVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRouteVC.h; sourceTree = "<group>"; };
 		F4DF8B5F1759B059001B88A1 /* MDRouteVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRouteVC.m; sourceTree = "<group>"; };
 		F4DF8B611759B252001B88A1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F4ECB10D177123750052DA58 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		F4ECB10E177123750052DA58 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
+		F4ECB10F177123750052DA58 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
+		F4ECB110177123750052DA58 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		F4ECB111177123750052DA58 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		F4ECB112177123750052DA58 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		F4ECB113177123750052DA58 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		F4ECB114177123750052DA58 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		F4ECB115177123750052DA58 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		F4ECB116177123750052DA58 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		F4ECB117177123750052DA58 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		F4ECB118177123750052DA58 /* Icon@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x~ipad.png"; sourceTree = "<group>"; };
+		F4ECB119177123750052DA58 /* iPad-Retina–Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPad-Retina–Landscape.png"; sourceTree = "<group>"; };
+		F4ECB11A177123750052DA58 /* iPad-Retina–Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPad-Retina–Portrait.png"; sourceTree = "<group>"; };
+		F4ECB11B177123870052DA58 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = MilesDatas/Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +82,7 @@
 		66B4457F173998900014D61C = {
 			isa = PBXGroup;
 			children = (
+				F4ECB11B177123870052DA58 /* Media.xcassets */,
 				F4DF8B611759B252001B88A1 /* MapKit.framework */,
 				665E82D7173B1E6F0004BC0D /* README.md */,
 				66B44591173998910014D61C /* MilesDatas */,
@@ -113,13 +124,24 @@
 		66B44592173998910014D61C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F4ECB10D177123750052DA58 /* Default-568h@2x.png */,
+				F4ECB10E177123750052DA58 /* Default-Landscape.png */,
+				F4ECB10F177123750052DA58 /* Default-Portrait.png */,
+				F4ECB110177123750052DA58 /* Default.png */,
+				F4ECB111177123750052DA58 /* Default@2x.png */,
+				F4ECB112177123750052DA58 /* Icon-72.png */,
+				F4ECB113177123750052DA58 /* Icon-Small-50.png */,
+				F4ECB114177123750052DA58 /* Icon-Small.png */,
+				F4ECB115177123750052DA58 /* Icon-Small@2x.png */,
+				F4ECB116177123750052DA58 /* Icon.png */,
+				F4ECB117177123750052DA58 /* Icon@2x.png */,
+				F4ECB118177123750052DA58 /* Icon@2x~ipad.png */,
+				F4ECB119177123750052DA58 /* iPad-Retina–Landscape.png */,
+				F4ECB11A177123750052DA58 /* iPad-Retina–Portrait.png */,
 				66B44593173998910014D61C /* MilesDatas-Info.plist */,
 				66B44594173998910014D61C /* InfoPlist.strings */,
 				66B44597173998910014D61C /* main.m */,
 				66B44599173998910014D61C /* MilesDatas-Prefix.pch */,
-				66B4459D173998910014D61C /* Default.png */,
-				66B4459F173998910014D61C /* Default@2x.png */,
-				66B445A1173998910014D61C /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -192,10 +214,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4ECB11C177123870052DA58 /* Media.xcassets in Resources */,
 				66B44596173998910014D61C /* InfoPlist.strings in Resources */,
-				66B4459E173998910014D61C /* Default.png in Resources */,
-				66B445A0173998910014D61C /* Default@2x.png in Resources */,
-				66B445A2173998910014D61C /* Default-568h@2x.png in Resources */,
 				66B445A917399AB30014D61C /* MainStoryboard.storyboard in Resources */,
 				665E82D8173B1E6F0004BC0D /* README.md in Resources */,
 				F4DF8B5D1759B00D001B88A1 /* compass.png in Resources */,
@@ -291,6 +311,8 @@
 		66B445A6173998910014D61C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MilesDatas/MilesDatas-Prefix.pch";
 				INFOPLIST_FILE = "MilesDatas/MilesDatas-Info.plist";
@@ -302,6 +324,8 @@
 		66B445A7173998910014D61C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MilesDatas/MilesDatas-Prefix.pch";
 				INFOPLIST_FILE = "MilesDatas/MilesDatas-Info.plist";
