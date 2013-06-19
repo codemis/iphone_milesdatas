@@ -18,7 +18,6 @@
 		66B4459C173998910014D61C /* MDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B4459B173998910014D61C /* MDAppDelegate.m */; };
 		66B445A917399AB30014D61C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66B445A817399AB30014D61C /* MainStoryboard.storyboard */; };
 		66B445AD17399B910014D61C /* MDMileageTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B445AC17399B910014D61C /* MDMileageTableVC.m */; };
-		F4DF8B5D1759B00D001B88A1 /* compass.png in Resources */ = {isa = PBXBuildFile; fileRef = F4DF8B5C1759B00D001B88A1 /* compass.png */; };
 		F4DF8B601759B059001B88A1 /* MDRouteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4DF8B5F1759B059001B88A1 /* MDRouteVC.m */; };
 		F4DF8B621759B252001B88A1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DF8B611759B252001B88A1 /* MapKit.framework */; };
 		F4ECB11C177123870052DA58 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4ECB11B177123870052DA58 /* Media.xcassets */; };
@@ -43,7 +42,6 @@
 		66B445A817399AB30014D61C /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		66B445AB17399B910014D61C /* MDMileageTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMileageTableVC.h; sourceTree = "<group>"; };
 		66B445AC17399B910014D61C /* MDMileageTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDMileageTableVC.m; sourceTree = "<group>"; };
-		F4DF8B5C1759B00D001B88A1 /* compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compass.png; sourceTree = "<group>"; };
 		F4DF8B5E1759B059001B88A1 /* MDRouteVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRouteVC.h; sourceTree = "<group>"; };
 		F4DF8B5F1759B059001B88A1 /* MDRouteVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRouteVC.m; sourceTree = "<group>"; };
 		F4DF8B611759B252001B88A1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -62,6 +60,7 @@
 		F4ECB119177123750052DA58 /* iPad-Retina–Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPad-Retina–Landscape.png"; sourceTree = "<group>"; };
 		F4ECB11A177123750052DA58 /* iPad-Retina–Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPad-Retina–Portrait.png"; sourceTree = "<group>"; };
 		F4ECB11B177123870052DA58 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = MilesDatas/Media.xcassets; sourceTree = "<group>"; };
+		F4ECB11D177128E80052DA58 /* compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compass.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +123,7 @@
 		66B44592173998910014D61C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F4ECB11D177128E80052DA58 /* compass.png */,
 				F4ECB10D177123750052DA58 /* Default-568h@2x.png */,
 				F4ECB10E177123750052DA58 /* Default-Landscape.png */,
 				F4ECB10F177123750052DA58 /* Default-Portrait.png */,
@@ -153,7 +153,6 @@
 				66B445AC17399B910014D61C /* MDMileageTableVC.m */,
 				F4DF8B5E1759B059001B88A1 /* MDRouteVC.h */,
 				F4DF8B5F1759B059001B88A1 /* MDRouteVC.m */,
-				F4DF8B5C1759B00D001B88A1 /* compass.png */,
 				66872BD71739B68500E89B35 /* MDMileageShowTableVC.h */,
 				66872BD81739B68500E89B35 /* MDMileageShowTableVC.m */,
 				665909191742E10B00CA419B /* MDMileageAddTableVC.h */,
@@ -218,7 +217,6 @@
 				66B44596173998910014D61C /* InfoPlist.strings in Resources */,
 				66B445A917399AB30014D61C /* MainStoryboard.storyboard in Resources */,
 				665E82D8173B1E6F0004BC0D /* README.md in Resources */,
-				F4DF8B5D1759B00D001B88A1 /* compass.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +315,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MilesDatas/MilesDatas-Prefix.pch";
 				INFOPLIST_FILE = "MilesDatas/MilesDatas-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -331,6 +330,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MilesDatas/MilesDatas-Prefix.pch";
 				INFOPLIST_FILE = "MilesDatas/MilesDatas-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
