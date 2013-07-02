@@ -4,7 +4,8 @@
 @interface MDMileageTableVC () <NSURLConnectionDataDelegate>
 @property (nonatomic, readonly) NSInteger recordCount;
 @property (nonatomic, strong) NSMutableData *jsonResponse;
-@property (nonatomic, strong) NSArray *records;
+@property (nonatomic, strong) NSMutableArray *records;
+-(IBAction)completedCreation:(UIStoryboardSegue *)segue;
 @end
 
 @implementation MDMileageTableVC
@@ -12,21 +13,20 @@
 - (NSInteger) recordCount {
     return self.records.count;
 }
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+-(void)fetchAllRecords {
     self.jsonResponse = NSMutableData.new;
     NSURL *url = [NSURL URLWithString:@"http://blooming-wave-3501.herokuapp.com/records.json"];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     [NSURLConnection connectionWithRequest:urlRequest delegate:self];
 }
-
-#pragma mark - Table view data source
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (void)viewDidLoad
 {
-    // Return the number of rows in the section.
+    [super viewDidLoad];
+    [self fetchAllRecords];
+}
+#pragma mark - Table view data source
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return self.recordCount;
 }
 
@@ -44,10 +44,28 @@
     [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
     NSString *prettyCreationDate = [dateFormatter stringFromDate:creationDate];
     cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", prettyCreationDate, record[@"car"]];
-    cell.detailTextLabel.text = record[@"reason"];
+    NSString *reason = record[@"reason"];
+    cell.detailTextLabel.text =  [reason substringToIndex:MIN(50, reason.length)];
+    //FIXME: Untruncated causes cell oddities
     return cell;
 }
-
+-(void)  tableView:(UITableView *)tableView
+commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+ forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSString *urlString = [NSString stringWithFormat:@"http://blooming-wave-3501.herokuapp.com/records/%@.json",
+                               self.records[indexPath.row][@"id"]];
+        NSURL *url = [NSURL URLWithString:urlString];
+        NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
+        [urlRequest setValue:@"application/json"
+          forHTTPHeaderField:@"Content-Type"];
+        [urlRequest setValue:@"application/json"
+          forHTTPHeaderField:@"accept"];
+        urlRequest.HTTPMethod = @"DELETE";
+        [self.records removeObjectAtIndex:indexPath.row];
+        [NSURLConnection connectionWithRequest:urlRequest delegate:self];
+    }
+}
 #pragma mark - NSURL Delegate methods
 - (void) connection:(NSURLConnection *)connection
      didReceiveData:(NSData *)data
@@ -62,16 +80,17 @@
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSError *error;
-    self.records = [NSJSONSerialization JSONObjectWithData:self.jsonResponse
+    if (self.jsonResponse.length > 0) //Rails sends no content on delete
+        self.records = [[NSJSONSerialization JSONObjectWithData:self.jsonResponse
                                                    options:0
-                                                     error:&error];
-    if (error) {
-        NSLog(@"We have an error!");
-    }else{
-        [self.tableView reloadData];
-    }
+                                                     error:&error] mutableCopy];
+    if (error) NSLog(@"We have an error!");
+    else [self.tableView reloadData];
 }
 #pragma mark - Segue methods
+-(IBAction)completedCreation:(UIStoryboardSegue *)segue {
+    [self fetchAllRecords];
+}
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
                  sender:(id)sender
 {

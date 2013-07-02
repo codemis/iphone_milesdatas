@@ -55,13 +55,13 @@
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSError *error;
-    NSArray *serverResponse = [NSJSONSerialization JSONObjectWithData:self.jsonResponse
-                                                              options:0
-                                                                error:&error];
+    //TODO: Uncomment and implement following
+/*NSArray *serverResponse =[NSJSONSerialization JSONObjectWithData:self.jsonResponse options:0 error:&error];
+*/
     if (error) {
         NSLog(@"We have an error!");
     }else{
-        NSLog(@"%@", serverResponse);
+        [self performSegueWithIdentifier:@"completedCreationSegue" sender:self];
     }
 }
 @end
