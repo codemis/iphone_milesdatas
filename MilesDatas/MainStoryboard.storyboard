@@ -1,61 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="gfo-tr-67Q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4457.9" systemVersion="13A497d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="31j-VF-Jaw">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.9"/>
     </dependencies>
     <scenes>
-        <!--Mileage TableVC - Trips-->
-        <scene sceneID="MW2-el-XmF">
-            <objects>
-                <tableViewController id="qxr-l0-BXS" customClass="MDMileageTableVC" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="jls-Np-Bgx">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Record" textLabel="Kic-cw-rEQ" detailTextLabel="grp-IE-q6M" style="IBUITableViewCellStyleSubtitle" id="QGq-Ch-5E3">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Car" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kic-cw-rEQ">
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="start and stop location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grp-IE-q6M">
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <connections>
-                                    <segue destination="ACB-Zb-bgD" kind="push" identifier="showTrip" id="YTk-CL-s6w"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="qxr-l0-BXS" id="zcm-zK-eNM"/>
-                            <outlet property="delegate" destination="qxr-l0-BXS" id="xdc-wI-Iyl"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Trips" id="3vY-5K-Kd5">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="7Mg-bi-qY0"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="3Pc-3P-pWf">
-                            <connections>
-                                <segue destination="SPi-bM-pyY" kind="push" identifier="addTrip" id="fau-EC-MnT"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KzM-DT-F3d" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="208" y="153"/>
-        </scene>
         <!--Mileage Add TableVC - New Trip-->
         <scene sceneID="Rg5-Be-rAO">
             <objects>
@@ -68,24 +17,19 @@
                             <tableViewSection id="evs-Hx-L4F">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="hL5-he-Yns">
-                                        <rect key="frame" x="0.0" y="10" width="320" height="46"/>
+                                        <rect key="frame" x="0.0" y="35" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Car Model" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fyx-cO-jf0">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="213" id="ROF-0J-Bu1"/>
-                                                    </constraints>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Car Model" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fyx-cO-jf0">
+                                                    <rect key="frame" x="90" y="1" width="213" height="43"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                 </textField>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Car" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPl-65-KFb">
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="43" id="eCa-1V-3NW"/>
-                                                        <constraint firstAttribute="width" constant="72" id="l0F-FJ-4FC"/>
-                                                    </constraints>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Car" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPl-65-KFb">
+                                                    <rect key="frame" x="10" y="1" width="72" height="43"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                     <color key="textColor" red="0.32156862749999998" green="0.40000000000000002" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -93,38 +37,25 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <constraints>
-                                            <constraint firstItem="qPl-65-KFb" firstAttribute="top" secondItem="hL5-he-Yns" secondAttribute="top" constant="1" id="3pc-c7-7ZK"/>
-                                            <constraint firstItem="qPl-65-KFb" firstAttribute="baseline" secondItem="Fyx-cO-jf0" secondAttribute="baseline" type="default" id="9te-70-PS9"/>
-                                            <constraint firstItem="qPl-65-KFb" firstAttribute="leading" secondItem="hL5-he-Yns" secondAttribute="leading" constant="10" id="Yah-OF-X4h"/>
-                                            <constraint firstItem="Fyx-cO-jf0" firstAttribute="bottom" secondItem="qPl-65-KFb" secondAttribute="bottom" type="default" id="e6t-lO-vdM"/>
-                                            <constraint firstItem="Fyx-cO-jf0" firstAttribute="leading" secondItem="qPl-65-KFb" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="fwZ-WY-Erw"/>
-                                            <constraint firstItem="qPl-65-KFb" firstAttribute="top" secondItem="Fyx-cO-jf0" secondAttribute="top" type="default" id="kM8-AY-mEP"/>
-                                        </constraints>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Starting" id="6sf-St-RIR">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="x4H-lW-vf3">
-                                        <rect key="frame" x="0.0" y="102" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="128" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Starting Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ndU-qR-DK7">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="213" id="oy7-yI-VJo"/>
-                                                    </constraints>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Starting Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ndU-qR-DK7">
+                                                    <rect key="frame" x="90" y="0.0" width="213" height="43"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                 </textField>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Location" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5X-Ml-8hR">
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="43" id="tXe-a6-pb0"/>
-                                                        <constraint firstAttribute="width" constant="72" id="vyt-tP-tvM"/>
-                                                    </constraints>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Location" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5X-Ml-8hR">
+                                                    <rect key="frame" x="10" y="0.0" width="72" height="43"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                     <color key="textColor" red="0.32156862749999998" green="0.40000000000000002" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -132,34 +63,21 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <constraints>
-                                            <constraint firstItem="I5X-Ml-8hR" firstAttribute="top" secondItem="ndU-qR-DK7" secondAttribute="top" type="default" id="D29-n9-E3L"/>
-                                            <constraint firstItem="I5X-Ml-8hR" firstAttribute="baseline" secondItem="ndU-qR-DK7" secondAttribute="baseline" type="default" id="Hq2-lC-DcM"/>
-                                            <constraint firstItem="I5X-Ml-8hR" firstAttribute="leading" secondItem="x4H-lW-vf3" secondAttribute="leading" constant="10" id="LmP-UA-EO0"/>
-                                            <constraint firstItem="ndU-qR-DK7" firstAttribute="centerY" secondItem="x4H-lW-vf3" secondAttribute="centerY" type="default" id="ToK-JF-vf6"/>
-                                            <constraint firstItem="ndU-qR-DK7" firstAttribute="leading" secondItem="I5X-Ml-8hR" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="YGc-MH-5ep"/>
-                                            <constraint firstItem="ndU-qR-DK7" firstAttribute="bottom" secondItem="I5X-Ml-8hR" secondAttribute="bottom" type="default" id="hZm-IL-1fT"/>
-                                        </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="RDV-Ld-zE3">
-                                        <rect key="frame" x="0.0" y="147" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="172" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Starting Odometer" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LTW-JG-Tge">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="213" id="ZFd-ZL-sA1"/>
-                                                    </constraints>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Starting Odometer" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LTW-JG-Tge">
+                                                    <rect key="frame" x="90" y="0.0" width="213" height="43"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 </textField>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Odometer" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3B-IQ-w7P">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="72" id="Fiz-by-W7g"/>
-                                                        <constraint firstAttribute="height" constant="43" id="Ump-r7-FmB"/>
-                                                    </constraints>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Odometer" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3B-IQ-w7P">
+                                                    <rect key="frame" x="10" y="0.0" width="72" height="43"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                     <color key="textColor" red="0.32156862749999998" green="0.40000000000000002" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -167,38 +85,25 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <constraints>
-                                            <constraint firstItem="U3B-IQ-w7P" firstAttribute="leading" secondItem="RDV-Ld-zE3" secondAttribute="leading" constant="10" id="0Vg-cC-2Ee"/>
-                                            <constraint firstItem="LTW-JG-Tge" firstAttribute="bottom" secondItem="U3B-IQ-w7P" secondAttribute="bottom" type="default" id="BL1-RF-v7J"/>
-                                            <constraint firstItem="U3B-IQ-w7P" firstAttribute="top" secondItem="RDV-Ld-zE3" secondAttribute="top" type="default" id="J8V-L4-5Hj"/>
-                                            <constraint firstItem="LTW-JG-Tge" firstAttribute="leading" secondItem="U3B-IQ-w7P" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="LiF-h8-ShG"/>
-                                            <constraint firstItem="LTW-JG-Tge" firstAttribute="top" secondItem="RDV-Ld-zE3" secondAttribute="top" type="default" id="Oo9-gs-YxH"/>
-                                            <constraint firstItem="U3B-IQ-w7P" firstAttribute="baseline" secondItem="LTW-JG-Tge" secondAttribute="baseline" type="default" id="VDO-1u-jhB"/>
-                                        </constraints>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Stopping" id="i99-8Z-4V9">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Wic-Eu-8SG">
-                                        <rect key="frame" x="0.0" y="238" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="265" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Stopping Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fnG-HG-abL">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="213" id="3zd-oX-Ayw"/>
-                                                    </constraints>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Stopping Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fnG-HG-abL">
+                                                    <rect key="frame" x="90" y="0.0" width="213" height="43"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                 </textField>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Location" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Os-q4-HGw">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="72" id="BYZ-me-TvT"/>
-                                                        <constraint firstAttribute="height" constant="43" id="oIQ-pA-J5q"/>
-                                                    </constraints>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Location" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Os-q4-HGw">
+                                                    <rect key="frame" x="10" y="0.0" width="72" height="43"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                     <color key="textColor" red="0.32156862749999998" green="0.40000000000000002" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -206,34 +111,21 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <constraints>
-                                            <constraint firstItem="fnG-HG-abL" firstAttribute="centerY" secondItem="Wic-Eu-8SG" secondAttribute="centerY" type="default" id="6R3-9J-EtT"/>
-                                            <constraint firstItem="fnG-HG-abL" firstAttribute="leading" secondItem="7Os-q4-HGw" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="MAZ-MB-B8V"/>
-                                            <constraint firstItem="7Os-q4-HGw" firstAttribute="baseline" secondItem="fnG-HG-abL" secondAttribute="baseline" type="default" id="hwh-fy-Hva"/>
-                                            <constraint firstItem="7Os-q4-HGw" firstAttribute="leading" secondItem="Wic-Eu-8SG" secondAttribute="leading" constant="10" id="lrI-hI-0Ps"/>
-                                            <constraint firstItem="fnG-HG-abL" firstAttribute="bottom" secondItem="7Os-q4-HGw" secondAttribute="bottom" type="default" id="nMU-2c-CEh"/>
-                                            <constraint firstItem="7Os-q4-HGw" firstAttribute="top" secondItem="fnG-HG-abL" secondAttribute="top" type="default" id="rdi-4o-0uk"/>
-                                        </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="yyw-Ys-G4Z">
-                                        <rect key="frame" x="0.0" y="283" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="309" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Stopping Odometer" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0qN-a8-mbj">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="213" id="wTI-RN-1Ls"/>
-                                                    </constraints>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Stopping Odometer" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0qN-a8-mbj">
+                                                    <rect key="frame" x="90" y="0.0" width="213" height="43"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 </textField>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Odometer" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7y-Zx-Fw2">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="72" id="1iU-Bn-FwO"/>
-                                                        <constraint firstAttribute="height" constant="43" id="HzG-5D-uCC"/>
-                                                    </constraints>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Odometer" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7y-Zx-Fw2">
+                                                    <rect key="frame" x="10" y="0.0" width="72" height="43"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                     <color key="textColor" red="0.32156862749999998" green="0.40000000000000002" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -241,42 +133,27 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <constraints>
-                                            <constraint firstItem="y7y-Zx-Fw2" firstAttribute="top" secondItem="yyw-Ys-G4Z" secondAttribute="top" type="default" id="0S7-u9-1Kz"/>
-                                            <constraint firstItem="y7y-Zx-Fw2" firstAttribute="baseline" secondItem="0qN-a8-mbj" secondAttribute="baseline" type="default" id="3gn-jL-bBL"/>
-                                            <constraint firstItem="0qN-a8-mbj" firstAttribute="top" secondItem="yyw-Ys-G4Z" secondAttribute="top" type="default" id="M2u-GX-cRC"/>
-                                            <constraint firstItem="0qN-a8-mbj" firstAttribute="bottom" secondItem="y7y-Zx-Fw2" secondAttribute="bottom" type="default" id="OrO-c1-h8X"/>
-                                            <constraint firstItem="y7y-Zx-Fw2" firstAttribute="leading" secondItem="yyw-Ys-G4Z" secondAttribute="leading" constant="10" id="Vxg-ua-DIv"/>
-                                            <constraint firstItem="0qN-a8-mbj" firstAttribute="leading" secondItem="y7y-Zx-Fw2" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="pWF-mR-Gb1"/>
-                                        </constraints>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Reason for Trip" id="gif-yM-iTL">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="151" id="Ys8-ct-YF3">
-                                        <rect key="frame" x="0.0" y="374" width="320" height="153"/>
+                                        <rect key="frame" x="0.0" y="402" width="320" height="152"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JYY-P5-2UO">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JYY-P5-2UO">
+                                                    <rect key="frame" x="15" y="6" width="289" height="140"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="140" id="7do-Or-qVh"/>
-                                                        <constraint firstAttribute="width" constant="289" id="ab2-Ic-WK8"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <constraints>
-                                            <constraint firstItem="JYY-P5-2UO" firstAttribute="centerY" secondItem="Ys8-ct-YF3" secondAttribute="centerY" type="default" id="0A4-zG-Er9"/>
-                                            <constraint firstItem="JYY-P5-2UO" firstAttribute="centerX" secondItem="Ys8-ct-YF3" secondAttribute="centerX" type="default" id="oGv-cs-ge0"/>
-                                        </constraints>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -286,6 +163,7 @@
                             <outlet property="delegate" destination="SPi-bM-pyY" id="k5i-b7-m47"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="New Trip" id="kZl-XK-jZz">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="byj-Rw-8sC">
                             <connections>
@@ -300,60 +178,95 @@
                         <outlet property="startingOdometer" destination="LTW-JG-Tge" id="7Vy-Yw-aq0"/>
                         <outlet property="stoppingLocation" destination="fnG-HG-abL" id="jh0-uC-EJM"/>
                         <outlet property="stoppingOdometer" destination="0qN-a8-mbj" id="04B-OX-yXU"/>
+                        <segue destination="BM7-Dz-Wwv" kind="unwind" identifier="completedCreationSegue" unwindAction="completedCreation:" id="3eY-XG-8NO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gsT-HI-Anb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="BM7-Dz-Wwv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="744" y="-93"/>
+            <point key="canvasLocation" x="1014" y="-95"/>
         </scene>
         <!--Mileage Show TableVC - Trip-->
-        <scene sceneID="OFs-7f-IJ2">
+        <scene sceneID="ItH-bg-MZj">
             <objects>
-                <tableViewController id="ACB-Zb-bgD" customClass="MDMileageShowTableVC" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Hax-We-N9W">
+                <tableViewController id="YVD-Ky-3yj" customClass="MDMileageShowTableVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="p2G-Q1-VCL">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
-                            <tableViewSection headerTitle="Starting" id="WW3-oS-HIq">
+                            <tableViewSection headerTitle="Starting" id="TMX-oK-EmX">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="WRd-bB-WQC" detailTextLabel="TyA-4C-5bI" style="IBUITableViewCellStyleValue2" id="jA8-bH-661">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="ovF-EW-07e" detailTextLabel="gm9-hZ-gid" style="IBUITableViewCellStyleValue2" id="sIo-Zm-z4l">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Location" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRd-bB-WQC">
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                                    <color key="textColor" red="0.32156862745098042" green="0.40000000000000002" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Car" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ovF-EW-07e">
+                                                    <rect key="frame" x="15" y="13" width="91" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Start Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TyA-4C-5bI">
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Car" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gm9-hZ-gid">
+                                                    <rect key="frame" x="112" y="13" width="23" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="GDu-5N-Hqm" detailTextLabel="DcL-qW-UPY" style="IBUITableViewCellStyleValue2" id="Sru-Fl-ogM">
-                                        <rect key="frame" x="0.0" y="91" width="320" height="45"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="eXN-Wy-njX" detailTextLabel="8NW-4m-8Mk" style="IBUITableViewCellStyleValue2" id="d0M-TT-sOp">
+                                        <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Odometer" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDu-5N-Hqm">
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                                    <color key="textColor" red="0.32156862745098042" green="0.40000000000000002" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Location" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eXN-Wy-njX">
+                                                    <rect key="frame" x="15" y="13" width="91" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Start Odometer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcL-qW-UPY">
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Start Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8NW-4m-8Mk">
+                                                    <rect key="frame" x="112" y="13" width="89" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="o9r-TZ-n9i" detailTextLabel="Cvh-iS-qoY" style="IBUITableViewCellStyleValue2" id="i65-er-lFq">
+                                        <rect key="frame" x="0.0" y="110" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Odometer" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="o9r-TZ-n9i">
+                                                    <rect key="frame" x="15" y="13" width="91" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Start Odometer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cvh-iS-qoY">
+                                                    <rect key="frame" x="112" y="13" width="98" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -361,45 +274,53 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Stopping" id="pq6-Ea-E87">
+                            <tableViewSection headerTitle="Stopping" id="mTJ-vW-Jvf">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="yTw-kN-fFb" detailTextLabel="pxU-cK-F9k" style="IBUITableViewCellStyleValue2" id="WoA-vk-wL2">
-                                        <rect key="frame" x="0.0" y="182" width="320" height="45"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="tl9-7T-wfs" detailTextLabel="raz-yC-x05" style="IBUITableViewCellStyleValue2" id="ogN-Xi-RBp">
+                                        <rect key="frame" x="0.0" y="176" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Location" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTw-kN-fFb">
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                                    <color key="textColor" red="0.32156862745098042" green="0.40000000000000002" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Location" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tl9-7T-wfs">
+                                                    <rect key="frame" x="15" y="13" width="91" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Stop Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxU-cK-F9k">
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Stop Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="raz-yC-x05">
+                                                    <rect key="frame" x="112" y="13" width="89" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="zf6-Mt-rwo" detailTextLabel="jH7-NW-Wsl" style="IBUITableViewCellStyleValue2" id="ebN-qx-JXf">
-                                        <rect key="frame" x="0.0" y="227" width="320" height="45"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="arY-HV-Lhc" detailTextLabel="Afv-Lf-GgV" style="IBUITableViewCellStyleValue2" id="V1N-1k-wf0">
+                                        <rect key="frame" x="0.0" y="220" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Odometer" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zf6-Mt-rwo">
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                                    <color key="textColor" red="0.32156862745098042" green="0.40000000000000002" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Odometer" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="arY-HV-Lhc">
+                                                    <rect key="frame" x="15" y="13" width="91" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Stop Odometer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jH7-NW-Wsl">
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Stop Odometer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Afv-Lf-GgV">
+                                                    <rect key="frame" x="112" y="13" width="98" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -407,72 +328,162 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Reason for Trip" id="Qh0-wf-pqU">
+                            <tableViewSection headerTitle="Reason for Trip" id="QV2-et-5dy">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="151" id="TyI-aL-gR1">
-                                        <rect key="frame" x="0.0" y="318" width="320" height="153"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="222" id="AP6-xO-BT1">
+                                        <rect key="frame" x="0.0" y="286" width="320" height="222"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="221"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Reason" translatesAutoresizingMaskIntoConstraints="NO" id="eEL-u6-9mh">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SNO-SO-Ojg">
+                                                    <rect key="frame" x="20" y="20" width="280" height="201"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="289" id="kyE-ZC-umW"/>
-                                                        <constraint firstAttribute="height" constant="140" id="r7V-ly-T7E"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <constraints>
-                                            <constraint firstItem="eEL-u6-9mh" firstAttribute="centerY" secondItem="TyI-aL-gR1" secondAttribute="centerY" type="default" id="geP-oC-8VR"/>
-                                            <constraint firstItem="eEL-u6-9mh" firstAttribute="centerX" secondItem="TyI-aL-gR1" secondAttribute="centerX" type="default" id="nhH-jO-Nus"/>
-                                        </constraints>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
                         <connections>
-                            <outlet property="dataSource" destination="ACB-Zb-bgD" id="MiA-vF-jVe"/>
-                            <outlet property="delegate" destination="ACB-Zb-bgD" id="OyO-z5-Q4I"/>
+                            <outlet property="dataSource" destination="YVD-Ky-3yj" id="D1x-Yu-Rfe"/>
+                            <outlet property="delegate" destination="YVD-Ky-3yj" id="33L-N7-GWv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Trip" id="nfq-P4-eqD"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Trip" id="YOo-M9-CaX">
+                        <barButtonItem key="rightBarButtonItem" image="Compass" id="5Av-ob-5cz">
+                            <connections>
+                                <segue destination="1NW-cn-XUK" kind="push" identifier="showRoute" id="sb3-Ra-xMU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="reason" destination="eEL-u6-9mh" id="SFR-cw-EFL"/>
-                        <outlet property="startLocation" destination="TyA-4C-5bI" id="S2C-ls-LFy"/>
-                        <outlet property="startOdometer" destination="DcL-qW-UPY" id="dox-hn-6LM"/>
-                        <outlet property="stopLocation" destination="pxU-cK-F9k" id="DUi-cO-sBv"/>
-                        <outlet property="stopOdometer" destination="jH7-NW-Wsl" id="L7D-gS-3Ir"/>
+                        <outlet property="car" destination="gm9-hZ-gid" id="AvL-Fc-aqG"/>
+                        <outlet property="reason" destination="SNO-SO-Ojg" id="C1O-WI-DrO"/>
+                        <outlet property="startLocation" destination="8NW-4m-8Mk" id="VnS-6m-E6M"/>
+                        <outlet property="startOdometer" destination="Cvh-iS-qoY" id="Axa-nZ-EGy"/>
+                        <outlet property="stopLocation" destination="raz-yC-x05" id="aEz-tO-8mp"/>
+                        <outlet property="stopOdometer" destination="Afv-Lf-GgV" id="m1z-WY-P7O"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CtF-4m-b3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ey-8C-ilN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="745" y="609"/>
+            <point key="canvasLocation" x="1019" y="596"/>
+        </scene>
+        <!--Route VC - Route-->
+        <scene sceneID="uKL-8e-V80">
+            <objects>
+                <viewController id="1NW-cn-XUK" userLabel="Route VC - Route" customClass="MDRouteVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0df-Fj-Xin">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l9T-Yh-By3">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <connections>
+                                    <outlet property="delegate" destination="1NW-cn-XUK" id="JkL-Tz-7HO"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Route" id="k5Z-fo-kC1"/>
+                    <connections>
+                        <outlet property="mapView" destination="l9T-Yh-By3" id="yOf-uw-Mkg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OBK-1E-oS6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1497" y="596"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="qie-A9-JBs">
+        <scene sceneID="eeg-vM-nS8">
             <objects>
-                <navigationController id="gfo-tr-67Q" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="31j-VF-Jaw" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TCS-q6-Les">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FvC-Xu-UPF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="qxr-l0-BXS" kind="relationship" relationship="rootViewController" id="Xi5-CX-77E"/>
+                        <segue destination="WPx-IR-bSY" kind="relationship" relationship="rootViewController" id="FxF-gD-IOJ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Sgr-Pp-agJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YUY-tG-tyv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-232" y="150"/>
+            <point key="canvasLocation" x="-28" y="155"/>
+        </scene>
+        <!--Mileage TableVC - Records-->
+        <scene sceneID="wmO-yC-tTI">
+            <objects>
+                <tableViewController id="WPx-IR-bSY" customClass="MDMileageTableVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9il-pF-bo1">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Record" textLabel="llZ-c9-lfC" detailTextLabel="QZ0-If-rgZ" style="IBUITableViewCellStyleSubtitle" id="zaF-At-EwH">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Date - Vehicle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="llZ-c9-lfC">
+                                            <rect key="frame" x="15" y="4" width="108" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Reason" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QZ0-If-rgZ">
+                                            <rect key="frame" x="15" y="26" width="42" height="14"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="YVD-Ky-3yj" kind="push" identifier="showTrip" id="45k-c6-Bti"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WPx-IR-bSY" id="IvV-IB-9ur"/>
+                            <outlet property="delegate" destination="WPx-IR-bSY" id="Ftd-kB-tYy"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Records" id="u3u-K8-82d">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="P0o-vr-Zvp">
+                            <connections>
+                                <segue destination="SPi-bM-pyY" kind="push" id="rcR-Wn-vsN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PzU-8K-kVs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="469" y="155"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Compass" width="30" height="30"/>
+    </resources>
     <classes>
         <class className="MDMileageAddTableVC" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MDMileageAddTableVC.h"/>
@@ -489,6 +500,7 @@
         <class className="MDMileageShowTableVC" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MDMileageShowTableVC.h"/>
             <relationships>
+                <relationship kind="outlet" name="car" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="reason" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="startLocation" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="startOdometer" candidateClass="UILabel"/>
@@ -498,9 +510,18 @@
         </class>
         <class className="MDMileageTableVC" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MDMileageTableVC.h"/>
+            <relationships>
+                <relationship kind="action" name="completedCreation:" candidateClass="UIStoryboardSegue"/>
+            </relationships>
         </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        <class className="MDRouteVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MDRouteVC.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
