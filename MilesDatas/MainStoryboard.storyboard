@@ -282,7 +282,7 @@
             <objects>
                 <tableViewController id="YVD-Ky-3yj" customClass="MDMileageShowTableVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="p2G-Q1-VCL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -457,6 +457,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="car" destination="gm9-hZ-gid" id="AvL-Fc-aqG"/>
                         <outlet property="reason" destination="SNO-SO-Ojg" id="C1O-WI-DrO"/>
                         <outlet property="startLocation" destination="8NW-4m-8Mk" id="VnS-6m-E6M"/>
                         <outlet property="startOdometer" destination="Cvh-iS-qoY" id="Axa-nZ-EGy"/>
@@ -466,14 +467,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ey-8C-ilN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1455" y="607"/>
+            <point key="canvasLocation" x="1019" y="596"/>
         </scene>
         <!--Route VC - Route-->
         <scene sceneID="uKL-8e-V80">
             <objects>
                 <viewController id="1NW-cn-XUK" userLabel="Route VC - Route" customClass="MDRouteVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0df-Fj-Xin">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l9T-Yh-By3">
@@ -523,11 +524,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Record" textLabel="llZ-c9-lfC" detailTextLabel="QZ0-If-rgZ" style="IBUITableViewCellStyleSubtitle" id="zaF-At-EwH">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Record" textLabel="llZ-c9-lfC" detailTextLabel="QZ0-If-rgZ" style="IBUITableViewCellStyleSubtitle" id="zaF-At-EwH">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Date - Vehicle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="llZ-c9-lfC">
@@ -547,6 +548,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="YVD-Ky-3yj" kind="push" identifier="showTrip" id="45k-c6-Bti"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -581,6 +585,7 @@
         <class className="MDMileageShowTableVC" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MDMileageShowTableVC.h"/>
             <relationships>
+                <relationship kind="outlet" name="car" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="reason" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="startLocation" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="startOdometer" candidateClass="UILabel"/>
