@@ -41,7 +41,9 @@
     [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
     NSString *prettyCreationDate = [dateFormatter stringFromDate:creationDate];
     cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", prettyCreationDate, record[@"car"]];
-    cell.detailTextLabel.text = record[@"reason"];
+    NSString *reason = record[@"reason"];
+    cell.detailTextLabel.text =  [reason substringToIndex:MIN(50, reason.length)];
+    //FIXME: Untruncated causes cell oddities
     return cell;
 }
 -(void)  tableView:(UITableView *)tableView
