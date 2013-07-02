@@ -5,6 +5,7 @@
 @property (nonatomic, readonly) NSInteger recordCount;
 @property (nonatomic, strong) NSMutableData *jsonResponse;
 @property (nonatomic, strong) NSMutableArray *records;
+-(IBAction)completedCreation:(UIStoryboardSegue *)segue;
 @end
 
 @implementation MDMileageTableVC
@@ -12,14 +13,16 @@
 - (NSInteger) recordCount {
     return self.records.count;
 }
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+-(void)fetchAllRecords {
     self.jsonResponse = NSMutableData.new;
     NSURL *url = [NSURL URLWithString:@"http://blooming-wave-3501.herokuapp.com/records.json"];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     [NSURLConnection connectionWithRequest:urlRequest delegate:self];
+}
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self fetchAllRecords];
 }
 #pragma mark - Table view data source
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -85,6 +88,9 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
     else [self.tableView reloadData];
 }
 #pragma mark - Segue methods
+-(IBAction)completedCreation:(UIStoryboardSegue *)segue {
+    [self fetchAllRecords];
+}
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
                  sender:(id)sender
 {
