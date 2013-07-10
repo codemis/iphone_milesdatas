@@ -11,7 +11,7 @@ MKMapRect coordinateRegionForCoordinates(CLLocationCoordinate2D *coords,
     }
     return r;
 }
-@interface MDRouteVC ()
+@interface MDRouteVC () <MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @end
 
@@ -69,6 +69,20 @@ MKMapRect coordinateRegionForCoordinates(CLLocationCoordinate2D *coords,
     [self.mapView setVisibleMapRect:
       coordinateRegionForCoordinates(coords,MAP_ANNOTATIONS_COUNT)
                         edgePadding:EDGE_INSETS animated:NO];
+    MKPolyline *routeLine = [MKPolyline polylineWithCoordinates:coords
+                                                          count:MAP_ANNOTATIONS_COUNT];
+    [self.mapView addOverlay:routeLine];
     free(coords);
+}
+-(MKOverlayRenderer *)mapView:(MKMapView *)mapView
+           rendererForOverlay:(id<MKOverlay>)overlay {
+    if ([overlay isKindOfClass:[MKPolyline class]]) {
+        MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc]
+                                        initWithPolyline:(MKPolyline *)overlay];
+        renderer.strokeColor = [UIColor blueColor];
+        renderer.lineWidth = 2.0;
+        return renderer;
+    }
+    return nil;
 }
 @end
