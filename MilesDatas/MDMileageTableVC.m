@@ -1,7 +1,6 @@
 #import "MDMileageTableVC.h"
 #import "MDMileageShowTableVC.h"
 #define RECORDS_URL @"http://blooming-wave-3501.herokuapp.com/records.json"
-#define RECORDS_URL_LOCAL @"http://192.168.1.105:3000/records.json"
 @interface MDMileageTableVC () <NSURLConnectionDataDelegate>
 @property (nonatomic, readonly) NSInteger recordCount;
 @property (nonatomic, strong) NSMutableData *jsonResponse;
@@ -16,7 +15,7 @@
 }
 -(void)fetchAllRecords {
     self.jsonResponse = NSMutableData.new;
-    NSURL *url = [NSURL URLWithString:RECORDS_URL_LOCAL];
+    NSURL *url = [NSURL URLWithString:RECORDS_URL];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     [NSURLConnection connectionWithRequest:urlRequest delegate:self];
 }

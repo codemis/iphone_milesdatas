@@ -46,32 +46,30 @@ MKMapRect coordinateRegionForCoordinates(CLLocationCoordinate2D *coords,
     [super viewDidAppear:YES];
     CLLocationCoordinate2D *coords = malloc(MAP_ANNOTATIONS_COUNT *
                                             sizeof(CLLocationCoordinate2D));
-    CLLocationCoordinate2D startLocation =
-      [self locationWithLatitude:[self.record[@"start_lat"] doubleValue]
-                   withLongitude:[self.record[@"start_long"] doubleValue]];
-    coords[0] = startLocation;
+    CLLocation *startLocation =
+      [[CLLocation alloc] initWithLatitude:[self.record[@"start_lat"] doubleValue]
+                                 longitude:[self.record[@"start_long"] doubleValue]];
+    coords[0] = startLocation.coordinate;
     NSString *startSubtitle =
       [self formatOdometer:[self odometer:self.record[@"start_odometer"]]];
     MKPointAnnotation *startPoint =
-      [self addPinToMapAtLocation:startLocation
+      [self addPinToMapAtLocation:startLocation.coordinate
                         withTitle:self.record[@"start_location"]
                      withSubtitle:startSubtitle];
     [self.mapView selectAnnotation:startPoint animated:YES];
-    CLLocationCoordinate2D stopLocation =
-    [self locationWithLatitude:[self.record[@"stop_lat"] doubleValue]
-                 withLongitude:[self.record[@"stop_long"] doubleValue]];
-    coords[1] = stopLocation;
+    CLLocation *stopLocation =
+      [[CLLocation alloc] initWithLatitude:[self.record[@"stop_lat"] doubleValue]
+                   longitude:[self.record[@"stop_long"] doubleValue]];
+    coords[1] = stopLocation.coordinate;
     NSString *stopSubtitle =
       [self formatOdometer:[self odometer:self.record[@"stop_odometer"]]];
-    [self addPinToMapAtLocation:stopLocation
+    [self addPinToMapAtLocation:stopLocation.coordinate
                       withTitle:self.record[@"stop_location"]
                    withSubtitle:stopSubtitle];
     [self.mapView setVisibleMapRect:
       coordinateRegionForCoordinates(coords,MAP_ANNOTATIONS_COUNT)
                         edgePadding:EDGE_INSETS animated:NO];
-    MKPolyline *routeLine = [MKPolyline polylineWithCoordinates:coords
-                                                          count:MAP_ANNOTATIONS_COUNT];
-    [self.mapView addOverlay:routeLine];
+    [self overlayRouteFrom:startLocation to:stopLocation];
     free(coords);
 }
 -(MKOverlayRenderer *)mapView:(MKMapView *)mapView
@@ -80,9 +78,66 @@ MKMapRect coordinateRegionForCoordinates(CLLocationCoordinate2D *coords,
         MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc]
                                         initWithPolyline:(MKPolyline *)overlay];
         renderer.strokeColor = [UIColor blueColor];
-        renderer.lineWidth = 2.0;
+        renderer.lineWidth = 1.0;
         return renderer;
     }
     return nil;
+}
+-(MKPolyline *)routeFromLocation:(CLLocation *)startLocation
+                      toLocation:(CLLocation *)stopLocation {
+    MKPlacemark *startPlacemark = [[MKPlacemark alloc] initWithCoordinate:startLocation.coordinate
+                                               addressDictionary:nil];
+    MKPlacemark *stopPlacemark = [[MKPlacemark alloc] initWithCoordinate:stopLocation.coordinate
+                                              addressDictionary:nil];
+    MKDirectionsRequest *directionsRequest = [[MKDirectionsRequest alloc] init];
+    directionsRequest.source = [[MKMapItem alloc] initWithPlacemark:startPlacemark];
+    directionsRequest.destination = [[MKMapItem alloc] initWithPlacemark:stopPlacemark];
+    directionsRequest.transportType = MKDirectionsTransportTypeAutomobile;
+    MKDirections *directions =
+      [[MKDirections alloc] initWithRequest:directionsRequest];
+    [directions calculateDirectionsWithCompletionHandler:
+      ^(MKDirectionsResponse *response, NSError *error) {
+          if (!error) {
+              MKRoute *route = response.routes[0];
+              for(MKRouteStep *routeStep in route.steps){
+                  NSLog(@"Latitude: %g longitude: %g",
+                        routeStep.polyline.coordinate.latitude,
+                        routeStep.polyline.coordinate.longitude);
+              }
+          }
+       }
+     ];
+    return nil;
+}
+-(void)overlayRouteFrom:(CLLocation *)fromLocation to:(CLLocation *)toLocation {
+    MKPlacemark   *fromPlacemark = [[MKPlacemark alloc] initWithCoordinate:fromLocation.coordinate
+                                                       addressDictionary:nil];
+    MKPlacemark *toPlacemark =
+      [[MKPlacemark alloc] initWithCoordinate:toLocation.coordinate
+                            addressDictionary:nil];
+    MKMapItem *fromMapItem = [[MKMapItem alloc] initWithPlacemark:fromPlacemark];
+    MKMapItem *toMapItem = [[MKMapItem alloc] initWithPlacemark:toPlacemark];
+    MKDirectionsRequest *directionsRequest = [[MKDirectionsRequest alloc] init];
+    directionsRequest.source      = fromMapItem;
+    directionsRequest.destination = toMapItem;
+    directionsRequest.transportType = MKDirectionsTransportTypeAutomobile;
+    MKDirections *directions =
+      [[MKDirections alloc] initWithRequest:directionsRequest];
+    [directions calculateDirectionsWithCompletionHandler:
+      ^(MKDirectionsResponse *response, NSError *error) {
+          if (!error) {
+              MKRoute *route = response.routes[0];
+              CLLocationCoordinate2D *coords = malloc(route.steps.count *
+                                                      sizeof(CLLocationCoordinate2D));
+              NSUInteger coordIndex = 0;
+              for(MKRouteStep *routeStep in route.steps){
+                  coords[coordIndex] = routeStep.polyline.coordinate;
+                  coordIndex++;
+              }
+              [self.mapView addOverlay:[MKPolyline polylineWithCoordinates:coords
+                                                                     count:route.steps.count]];
+              free(coords);
+          }
+    }];
 }
 @end
