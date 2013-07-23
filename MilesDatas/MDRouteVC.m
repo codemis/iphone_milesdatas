@@ -11,8 +11,9 @@ MKMapRect coordinateRegionForCoordinates(CLLocationCoordinate2D *coords,
     }
     return r;
 }
-@interface MDRouteVC () <MKMapViewDelegate>
+@interface MDRouteVC () <MKMapViewDelegate,NSURLConnectionDataDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property(strong,nonatomic) NSMutableData *jsonResponse;
 @end
 
 @implementation MDRouteVC
@@ -42,6 +43,15 @@ MKMapRect coordinateRegionForCoordinates(CLLocationCoordinate2D *coords,
 -(NSNumber *)odometer:(NSString *)reading {
     return [NSNumber numberWithDouble:[reading doubleValue]];
 }
+-(void)getGoogleRouteFrom:(CLLocation *)start to:(CLLocation *)stop {
+    self.jsonResponse = NSMutableData.new;
+    NSString *urlString = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/directions/json?origin=%f,%f"
+    "&destination=%f,%f&sensor=true",start.coordinate.latitude,start.coordinate.longitude,stop.coordinate.latitude,
+                     stop.coordinate.longitude];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [NSURLConnection connectionWithRequest:request delegate:self];
+}
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
     CLLocationCoordinate2D *coords = malloc(MAP_ANNOTATIONS_COUNT *
@@ -69,7 +79,7 @@ MKMapRect coordinateRegionForCoordinates(CLLocationCoordinate2D *coords,
     [self.mapView setVisibleMapRect:
       coordinateRegionForCoordinates(coords,MAP_ANNOTATIONS_COUNT)
                         edgePadding:EDGE_INSETS animated:NO];
-    [self overlayRouteFrom:startLocation to:stopLocation];
+    [self getGoogleRouteFrom:startLocation to:stopLocation];
     free(coords);
 }
 -(MKOverlayRenderer *)mapView:(MKMapView *)mapView
@@ -139,5 +149,27 @@ MKMapRect coordinateRegionForCoordinates(CLLocationCoordinate2D *coords,
               free(coords);
           }
     }];
+}
+#pragma mark - NSURL Delegate methods
+- (void) connection:(NSURLConnection *)connection
+     didReceiveData:(NSData *)data
+{
+    [self.jsonResponse appendData:data];
+}
+- (void) connection:(NSURLConnection *)connection
+ didReceiveResponse:(NSURLResponse *)response
+{
+    self.jsonResponse.length = 0;
+}
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSMutableDictionary *records = NSMutableDictionary.new;
+    NSError *error;
+    if (self.jsonResponse.length > 0) //Rails sends no content on delete
+        records = [[NSJSONSerialization JSONObjectWithData:self.jsonResponse
+                                                        options:0
+                                                          error:&error] mutableCopy];
+    if (error) NSLog(@"We have an error!");
+    else ;
 }
 @end
