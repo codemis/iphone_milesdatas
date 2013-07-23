@@ -119,37 +119,6 @@ MKMapRect coordinateRegionForCoordinates(CLLocationCoordinate2D *coords,
      ];
     return nil;
 }
--(void)overlayRouteFrom:(CLLocation *)fromLocation to:(CLLocation *)toLocation {
-    MKPlacemark   *fromPlacemark = [[MKPlacemark alloc] initWithCoordinate:fromLocation.coordinate
-                                                       addressDictionary:nil];
-    MKPlacemark *toPlacemark =
-      [[MKPlacemark alloc] initWithCoordinate:toLocation.coordinate
-                            addressDictionary:nil];
-    MKMapItem *fromMapItem = [[MKMapItem alloc] initWithPlacemark:fromPlacemark];
-    MKMapItem *toMapItem = [[MKMapItem alloc] initWithPlacemark:toPlacemark];
-    MKDirectionsRequest *directionsRequest = [[MKDirectionsRequest alloc] init];
-    directionsRequest.source      = fromMapItem;
-    directionsRequest.destination = toMapItem;
-    directionsRequest.transportType = MKDirectionsTransportTypeAutomobile;
-    MKDirections *directions =
-      [[MKDirections alloc] initWithRequest:directionsRequest];
-    [directions calculateDirectionsWithCompletionHandler:
-      ^(MKDirectionsResponse *response, NSError *error) {
-          if (!error) {
-              MKRoute *route = response.routes[0];
-              CLLocationCoordinate2D *coords = malloc(route.steps.count *
-                                                      sizeof(CLLocationCoordinate2D));
-              NSUInteger coordIndex = 0;
-              for(MKRouteStep *routeStep in route.steps){
-                  coords[coordIndex] = routeStep.polyline.coordinate;
-                  coordIndex++;
-              }
-              [self.mapView addOverlay:[MKPolyline polylineWithCoordinates:coords
-                                                                     count:route.steps.count]];
-              free(coords);
-          }
-    }];
-}
 #pragma mark - NSURL Delegate methods
 - (void) connection:(NSURLConnection *)connection
      didReceiveData:(NSData *)data
@@ -170,6 +139,50 @@ MKMapRect coordinateRegionForCoordinates(CLLocationCoordinate2D *coords,
                                                         options:0
                                                           error:&error] mutableCopy];
     if (error) NSLog(@"We have an error!");
-    else ;
+    else [self decodePolyLine:records[@"routes"][0][@"overview_polyline"][@"points"]];
+}
+-(void)decodePolyLine:(NSString *)encodedStr {
+    NSMutableString *encoded = [[NSMutableString alloc] initWithCapacity:encodedStr.length];
+    [encoded appendString:encodedStr];
+    [encoded replaceOccurrencesOfString:@"\\\\" withString:@"\\"
+                                options:NSLiteralSearch
+                                  range:NSMakeRange(0, encoded.length)];
+    NSInteger len = encoded.length;
+    NSInteger index = 0;
+    NSInteger lat=0;
+    NSInteger lng=0;
+    CLLocationCoordinate2D *coords = malloc(len * sizeof(CLLocationCoordinate2D));
+    NSUInteger coordIndex = 0;
+    while (index < len) {
+        NSInteger b;
+        NSInteger shift = 0;
+        NSInteger result = 0;
+        do {
+            b = [encoded characterAtIndex:index++] - 63;
+            result |= (b & 0x1f) << shift;
+            shift += 5;
+        } while (b >= 0x20);
+        NSInteger dlat = ((result & 1) ? ~(result >> 1) : (result >> 1));
+        lat += dlat;
+        shift = 0;
+        result = 0;
+        do {
+            b = [encoded characterAtIndex:index++] - 63;
+            result |= (b & 0x1f) << shift;
+            shift += 5;
+        } while (b >= 0x20);
+        NSInteger dlng = ((result & 1) ? ~(result >> 1) : (result >> 1));
+        lng += dlng;
+        NSNumber *latitude = [[NSNumber alloc] initWithFloat:lat * 1e-5];
+        NSNumber *longitude = [[NSNumber alloc] initWithFloat:lng * 1e-5];
+        CLLocationCoordinate2D coord;
+        coord.latitude = [latitude floatValue];
+        coord.longitude = [longitude floatValue];
+        coords[coordIndex] = coord;
+        coordIndex++;
+    }
+    [self.mapView addOverlay:[MKPolyline polylineWithCoordinates:coords
+                                                           count:coordIndex]];
+    free(coords);
 }
 @end
