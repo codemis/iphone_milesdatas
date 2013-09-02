@@ -1,19 +1,9 @@
 #import "MDRouteVC.h"
 #import <MapKit/MapKit.h>
-#define EDGE_INSETS UIEdgeInsetsMake(20, 20, 20, 20)
-#define MAP_ANNOTATIONS_COUNT 2
-MKMapRect coordinateRegionForCoordinates(CLLocationCoordinate2D *coords,
-                                         NSUInteger coordCount) {
-    MKMapRect r = MKMapRectNull;
-    for (NSUInteger i=0; i<coordCount; ++i) {
-        MKMapPoint p = MKMapPointForCoordinate(coords[i]);
-        r = MKMapRectUnion(r, MKMapRectMake(p.x, p.y, 0, 0));
-    }
-    return r;
-}
+
 @interface MDRouteVC () <MKMapViewDelegate,NSURLConnectionDataDelegate>
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property(strong,nonatomic) NSMutableData *jsonResponse;
+@property(weak,nonatomic)IBOutlet MKMapView *mapView;
+@property(strong,nonatomic)NSMutableData *jsonResponse;
 @end
 
 @implementation MDRouteVC
@@ -54,12 +44,9 @@ MKMapRect coordinateRegionForCoordinates(CLLocationCoordinate2D *coords,
 }
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
-    CLLocationCoordinate2D *coords = malloc(MAP_ANNOTATIONS_COUNT *
-                                            sizeof(CLLocationCoordinate2D));
     CLLocation *startLocation =
       [[CLLocation alloc] initWithLatitude:[self.record[@"start_lat"] doubleValue]
                                  longitude:[self.record[@"start_long"] doubleValue]];
-    coords[0] = startLocation.coordinate;
     NSString *startSubtitle =
       [self formatOdometer:[self odometer:self.record[@"start_odometer"]]];
     MKPointAnnotation *startPoint =
@@ -69,18 +56,14 @@ MKMapRect coordinateRegionForCoordinates(CLLocationCoordinate2D *coords,
     [self.mapView selectAnnotation:startPoint animated:YES];
     CLLocation *stopLocation =
       [[CLLocation alloc] initWithLatitude:[self.record[@"stop_lat"] doubleValue]
-                   longitude:[self.record[@"stop_long"] doubleValue]];
-    coords[1] = stopLocation.coordinate;
+                                 longitude:[self.record[@"stop_long"] doubleValue]];
     NSString *stopSubtitle =
       [self formatOdometer:[self odometer:self.record[@"stop_odometer"]]];
     [self addPinToMapAtLocation:stopLocation.coordinate
                       withTitle:self.record[@"stop_location"]
                    withSubtitle:stopSubtitle];
-    [self.mapView setVisibleMapRect:
-      coordinateRegionForCoordinates(coords,MAP_ANNOTATIONS_COUNT)
-                        edgePadding:EDGE_INSETS animated:NO];
+    [self.mapView showAnnotations:self.mapView.annotations animated:YES];
     [self getGoogleRouteFrom:startLocation to:stopLocation];
-    free(coords);
 }
 -(MKOverlayRenderer *)mapView:(MKMapView *)mapView
            rendererForOverlay:(id<MKOverlay>)overlay {

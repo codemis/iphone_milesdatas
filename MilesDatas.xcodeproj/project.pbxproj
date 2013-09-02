@@ -85,7 +85,6 @@
 			children = (
 				F4EDF97A177A563500987426 /* Default-568h@2x.png */,
 				F4ECB11B177123870052DA58 /* Media.xcassets */,
-				F4DF8B611759B252001B88A1 /* MapKit.framework */,
 				665E82D7173B1E6F0004BC0D /* README.md */,
 				66B44591173998910014D61C /* MilesDatas */,
 				66B4458A173998910014D61C /* Frameworks */,
@@ -104,6 +103,7 @@
 		66B4458A173998910014D61C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F4DF8B611759B252001B88A1 /* MapKit.framework */,
 				66B4458B173998910014D61C /* UIKit.framework */,
 				66B4458D173998910014D61C /* Foundation.framework */,
 				66B4458F173998910014D61C /* CoreGraphics.framework */,
