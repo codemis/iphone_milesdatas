@@ -9,7 +9,7 @@
 -(void)addPinToMapAtCoordinate:(CLLocationCoordinate2D)coordinate
                      withTitle:(NSString *)title
                   withSubtitle:(NSString *)subtitle
-                      selected:(BOOL)selected{
+                      selected:(BOOL)selected {
     MKPointAnnotation *point = MKPointAnnotation.new;
     point.coordinate = coordinate;
     point.title = title;

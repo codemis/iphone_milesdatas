@@ -1,6 +1,8 @@
 #import "MDMileageTableVC.h"
 #import "MDMileageShowTableVC.h"
+
 #define RECORDS_URL @"http://blooming-wave-3501.herokuapp.com/records.json"
+
 @interface MDMileageTableVC () <NSURLConnectionDataDelegate>
 @property (nonatomic, readonly) NSInteger recordCount;
 @property (nonatomic, strong) NSMutableData *jsonResponse;
@@ -10,7 +12,7 @@
 
 @implementation MDMileageTableVC
 
-- (NSInteger) recordCount {
+-(NSInteger) recordCount {
     return self.records.count;
 }
 -(void)fetchAllRecords {
@@ -19,19 +21,17 @@
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     [NSURLConnection connectionWithRequest:urlRequest delegate:self];
 }
-- (void)viewDidLoad
-{
+-(void)viewDidLoad {
     [super viewDidLoad];
     [self fetchAllRecords];
 }
 #pragma mark - Table view data source
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+-(NSInteger)tableView:(UITableView *)tableView
+numberOfRowsInSection:(NSInteger)section {
     return self.recordCount;
 }
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(UITableViewCell *)tableView:(UITableView *)tableView
+        cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Record"
                                                             forIndexPath:indexPath];
     NSDictionary *record = (NSDictionary *) self.records[indexPath.row];
@@ -67,18 +67,15 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
     }
 }
 #pragma mark - NSURL Delegate methods
-- (void) connection:(NSURLConnection *)connection
-     didReceiveData:(NSData *)data
-{
+-(void) connection:(NSURLConnection *)connection
+     didReceiveData:(NSData *)data {
     [self.jsonResponse appendData:data];
 }
-- (void) connection:(NSURLConnection *)connection
- didReceiveResponse:(NSURLResponse *)response
-{
+-(void) connection:(NSURLConnection *)connection
+didReceiveResponse:(NSURLResponse *)response {
     self.jsonResponse.length = 0;
 }
--(void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection {
     NSError *error;
     if (self.jsonResponse.length > 0) //Rails sends no content on delete
         self.records = [[NSJSONSerialization JSONObjectWithData:self.jsonResponse
@@ -91,12 +88,11 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 -(IBAction)completedCreation:(UIStoryboardSegue *)segue {
     [self fetchAllRecords];
 }
-- (void)prepareForSegue:(UIStoryboardSegue *)segue
-                 sender:(id)sender
-{
+-(void)prepareForSegue:(UIStoryboardSegue *)segue
+                sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showTrip"]) {
         MDMileageShowTableVC *mileageShowVC = segue.destinationViewController;
-        mileageShowVC.record = (NSDictionary *) self.records[self.tableView.indexPathForSelectedRow.row];
+        mileageShowVC.record = (NSDictionary *)self.records[self.tableView.indexPathForSelectedRow.row];
     }
 }
 @end
